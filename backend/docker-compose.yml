@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: first-bolt-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: first_bolt
+      POSTGRES_USER: first_bolt
+      POSTGRES_PASSWORD: FirstBolt22202
+    ports:
+      - "5432:5432"
+    volumes:
+      - first_bolt_postgres:/var/lib/postgresql/data
+
+volumes:
+  first_bolt_postgres:
